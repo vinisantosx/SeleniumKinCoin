@@ -64,50 +64,44 @@ function SignUpForm() {
 
     const feedback = document.getElementById("signupMessage");
 
-    // Nome vazio
-    if (name.trim() === "") {
-      feedback.innerText = "Name cannot be empty!";
-      return;
-    }
-
     // Telefone
     if (!isValidPhone(phone)) {
-      feedback.innerText = "Invalid phone format!";
+      feedback.innerText = "Formato de telefone inválido!";
       return;
     }
 
     // CPF
     if (!isValidCPF(cpf)) {
-      feedback.innerText = "Invalid CPF!";
+      feedback.innerText = "CPF inválido!";
       return;
     }
 
     // Email
     if (!isValidEmail(email)) {
-      feedback.innerText = "Invalid email format!";
+      feedback.innerText = "Formato de email inválido!";
       return;
     }
 
     // Confirmar email
     if (email !== confirmEmail) {
-      feedback.innerText = "Emails do not match!";
+      feedback.innerText = "Emails não coincidem!";
       return;
     }
 
     // Senha mínima
     if (password.length < 8) {
-      feedback.innerText = "Password must contain at least 8 characters!";
+      feedback.innerText = "A senha deve conter no minimo 8 caracteres!";
       return;
     }
 
     // Confirmar senha
     if (password !== confirmpassword) {
-      feedback.innerText = "Passwords do not match!";
+      feedback.innerText = "As senhas não coincidem!";
       return;
     }
 
     // Sucesso
-    feedback.innerText = "Account created successfully!";
+    feedback.innerText = "Conta criada com sucesso!";
 
     setState({
       name: "",
